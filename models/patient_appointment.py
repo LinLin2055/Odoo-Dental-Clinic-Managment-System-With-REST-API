@@ -87,13 +87,12 @@ class PatientAppointment(models.Model):
         for event in self.with_context(dont_notify=True):
             event.duration = self._get_duration(event.start, event.stop)
 
-    @api.model
-    def create(self, vals):  # save button in the form view
-
-        if vals.get('appointment_serial', _('New Appointment')) == _('New Appointment'):
-            vals['appointment_serial'] = self.env['ir.sequence'].next_by_code('patient.appointment.sequence') or _('New Appointment')
-        res = super(PatientAppointment, self).create(vals)
-        return res
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if vals.get('appointment_serial', _('New Appointment')) == _('New Appointment'):
+                vals['appointment_serial'] = self.env['ir.sequence'].next_by_code('patient.appointment.sequence') or _('New Appointment')
+        return super().create(vals_list)
     
     # allday = fields.Boolean('All Day', default=False)
     
@@ -279,6 +278,3 @@ class PatientAppointment(models.Model):
     #             event.update({**false_values, **event_values, **rrule_values})
     #         else:
     #             event.update(false_values)
-
-
-

@@ -33,7 +33,7 @@ def validate_token(func):
 
 
 class AcessToken(http.Controller):
-    @http.route("/api/login", methods=["GET"], type="http", auth="none", csrf=False)
+    @http.route("/api/auth/token", methods=["POST"], type="json", auth="public", csrf=True)
     def api_login(self, **post):
         """The token URL to be used for getting the access_token:
 

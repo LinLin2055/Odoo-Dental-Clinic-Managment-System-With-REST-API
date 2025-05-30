@@ -15,13 +15,12 @@ class PatientPrescription(models.Model):
     prescription_line_id = fields.One2many("patient.prescription.line", "prescription_id")
     notes = fields.Text("Notes")
 
-    @api.model
-    def create(self, vals):  # save button in the form view
-
-        if vals.get('prescription_serial', _('New Prescription')) == _('New Prescription'):
-            vals['prescription_serial'] = self.env['ir.sequence'].next_by_code('patient.appointment.prescription.sequence') or _('New Prescription')
-        res = super(PatientPrescription, self).create(vals)
-        return res
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if vals.get('prescription_serial', _('New Prescription')) == _('New Prescription'):
+                vals['prescription_serial'] = self.env['ir.sequence'].next_by_code('patient.appointment.prescription.sequence') or _('New Prescription')
+        return super(PatientPrescription, self).create(vals_list)
 
                                       
 
@@ -32,5 +31,3 @@ class PatientPrescriptionLine(models.Model):
     prescription_id_name = fields.Char(related='prescription_id.prescription_serial', string='Prescription ID')
     medicine_trade_name = fields.Char(string="Trade Name of Medicine")
     therapeutic_regimen = fields.Char(string="Therapeutic Regimen of Medicine")
-
-                                      
