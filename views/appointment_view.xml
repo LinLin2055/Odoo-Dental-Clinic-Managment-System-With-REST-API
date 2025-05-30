@@ -13,11 +13,11 @@
         </field>
     </record>
 
-    <record id="view_patient_appointment_tree" model="ir.ui.view">
-        <field name="name">patient.appointment.tree</field>
+    <record id="view_patient_appointment_list" model="ir.ui.view">
+        <field name="name">patient.appointment.list</field>
         <field name="model">patient.appointment</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 
                 <field name="appointment_serial" readonly="1"/>
                 <field name="start"/>
@@ -27,7 +27,7 @@
                 <field name="doctor_id"/>
 
                 <field name="user_id"/>
-            </tree>
+            </list>
 
         </field>
     </record>
@@ -65,11 +65,11 @@
                     <group>
 
                             <field t-on-click="updateChart" name="procedure_line_id">
-                                <tree editable="bottom">
+                                <list editable="bottom">
                                     <field class="tooth_number_class" name="tooth_no"/>
                                     <field name="service_item_id" readonly="0" />
                                     <field name="cost" readonly="1" invisible="0"/>
-                            </tree>
+                            </list>
                         </field>
 
                     </group>
@@ -102,8 +102,8 @@
         <field name="name">Appointments</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">patient.appointment</field>
-<!--        <field name="view_id" ref="view_combined_menu_item_tree"/>-->
-        <field name="view_mode">calendar,tree,form</field>
+<!--        <field name="view_id" ref="view_combined_menu_item_list"/>-->
+        <field name="view_mode">calendar,list,form</field>
     </record>
 
 
