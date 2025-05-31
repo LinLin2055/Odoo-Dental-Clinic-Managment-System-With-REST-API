@@ -13,6 +13,7 @@
     - Prescription management""",
     'depends': ['base', 'account', 'calendar', 'mail', 'portal', 'website', 'sale'],
     'data': [
+        'security/security.xml',
         'security/ir.model.access.csv',
         'data/data.xml',
         'views/appointment_view.xml',
