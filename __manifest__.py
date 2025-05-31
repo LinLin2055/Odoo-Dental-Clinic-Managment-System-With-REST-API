@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 {
     'name': 'Dental Clinic Management System',
     'version': '18.0.1.0.0',
@@ -18,12 +17,17 @@
         'data/data.xml',
         'views/appointment_view.xml',
         'views/patient_view.xml',
-        'views/backend.xml',
         'views/Patient_Appointment_Form_view_customization.xml',
     ],
-    'qweb': [
-        'static/src/xml/toothChart.xml',
-    ],
+    'assets': {
+        'web.assets_backend': [
+            'dental_clinic/static/src/js/ToothChart.js',
+            'dental_clinic/static/src/scss/toothChart.scss',
+        ],
+        'web.qweb': [
+            'dental_clinic/static/src/xml/toothChart.xml',
+        ],
+    },
     'installable': True,
     'application': True,
     'auto_install': False,

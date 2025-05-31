@@ -63,15 +63,15 @@
                     </group>
 
                     <group>
-
-                            <field t-on-click="updateChart" name="procedure_line_id">
-                                <list editable="bottom">
-                                    <field class="tooth_number_class" name="tooth_no"/>
-                                    <field name="service_item_id" readonly="0" />
-                                    <field name="cost" readonly="1" invisible="0"/>
-                            </list>
+                        <button name="action_update_chart" type="object" string="Update Chart" class="oe_highlight"/>
+                        
+                        <field name="procedure_line_id">
+                            <tree editable="bottom">
+                                <field class="tooth_number_class" name="tooth_no"/>
+                                <field name="service_item_id" readonly="0" />
+                                <field name="cost" readonly="1" invisible="0"/>
+                            </tree>
                         </field>
-
                     </group>
                         
                     
