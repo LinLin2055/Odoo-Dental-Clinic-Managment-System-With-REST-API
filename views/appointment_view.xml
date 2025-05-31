@@ -66,7 +66,7 @@
                         <button name="action_update_chart" type="object" string="Update Chart" class="oe_highlight"/>
 
                         <field name="procedure_line_id">
-                            <tree editable="bottom" string="Procedures" model="dental.procedure.line">
+                            <tree editable="bottom" string="Procedures">
                                 <field name="tooth_no"/>
                                 <field name="service_item_id"/>
                                 <field name="cost"/>
