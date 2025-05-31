@@ -14,6 +14,6 @@
     <record id="group_dental_manager" model="res.groups">
         <field name="name">Dental Manager</field>
         <field name="category_id" ref="module_category_dental"/>
-        <field name="implied_ids" eval="[(4, ref('group_dental_user'))]"/>
+        <field name="implied_ids" eval="[(4, ref('dental_clinic.group_dental_user'))]"/>
     </record>
 </odoo>
