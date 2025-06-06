@@ -95,3 +95,4 @@ class Users(models.Model):
         return x + y
 
     token_ids = fields.One2many("api.access_token", "user_id", string="Access Tokens")
+

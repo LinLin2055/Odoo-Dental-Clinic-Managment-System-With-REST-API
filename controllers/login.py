@@ -32,7 +32,7 @@ def validate_token(func):
 
 
 
-class AcessToken(http.Controller):
+class AccessToken(http.Controller):
     @http.route("/api/auth/token", type="json", auth="public", methods=["POST"])
     def api_login(self, **post):
         """The token URL to be used for getting the access_token:
@@ -333,3 +333,4 @@ class AcessToken(http.Controller):
     #         token.unlink()
     #     # Successful response:
     #     return valid_response([{"message": "access token %s successfully deleted" % (access_token,), "delete": True}])
+

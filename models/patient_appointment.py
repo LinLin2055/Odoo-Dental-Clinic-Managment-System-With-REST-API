@@ -286,3 +286,4 @@ class PatientAppointment(models.Model):
     #             event.update({**false_values, **event_values, **rrule_values})
     #         else:
     #             event.update(false_values)
+

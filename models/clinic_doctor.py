@@ -13,3 +13,4 @@ class ClinicDoctor(models.Model):
     email = fields.Char("Email")
     phone = fields.Char("Phone Number")
     appointment_id = fields.One2many('patient.appointment', 'doctor_id', string="Appointments")
+

@@ -67,3 +67,4 @@ class PatientPrescriptionLine(models.Model):
     )
     medicine_trade_name = fields.Char("Trade Name", required=True)
     therapeutic_regimen = fields.Char("Therapeutic Regimen", required=True)
+

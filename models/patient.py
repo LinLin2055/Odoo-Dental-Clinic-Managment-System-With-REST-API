@@ -61,3 +61,4 @@ class Patient(models.Model):
             if vals.get('patient_serial', _('New Patient')) == _('New Patient'):
                 vals['patient_serial'] = self.env['ir.sequence'].next_by_code('patient.sequence') or _('New Patient')
         return super().create(vals_list)
+
